@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="hse:hseDataListsModel" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+	<description>Data Lists for HSE</description>
+	<author>Mayboroda Kirill</author>
+	<version>1.0 </version>
+
+	<imports>
+		<import uri="http://www.alfresco.org/model/dictionary/1.0" prefix="d"/>
+		<import uri="http://www.alfresco.org/model/datalist/1.0" prefix="dl"/>
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm"/>
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://scbi.hse.su/model/datalist/1.0" prefix="hse"/>
+	</namespaces>
+
+	<types>
+		<type name="hse:studentList">
+			<title>Список студентов</title>
+			<description>Информация об обучающихся студентах</description>
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="hse:studentName">
+					<title>ФИО</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+				<property name="hse:studentGroup">
+					<title>Группа</title>
+					<description>№ группы студента</description>
+					<type>d:int</type>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+		</type>
+		<type name="hse:subjectList">
+			<title></title>
+			<description></description>
+			<parent>dl:dataListItem</parent>
+			<properties>
+				<property name="hse:subjectName">
+					<title>Предмет</title>
+					<type>d:text</type>
+					<mandatory>true</mandatory>
+				</property>
+			</properties>
+
+			<associations>
+				<association name="hse:subjectTeacher">
+					<title>Преподаватель</title>
+					<source>
+						<mandatory>false</mandatory>
+						<many>true</many>
+					</source>
+					<target>
+						<class>cm:person</class>
+						<mandatory>true</mandatory>
+						<many>true</many>
+					</target>
+				</association>
+			</associations>
+		</type>
+	</types>
+</model>

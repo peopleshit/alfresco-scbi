@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<project>
+  <groupId>su.hse.scbi</groupId>
+  <artifactId>alfresco-scbi</artifactId>
+  <version>0.1</version>
+  <modelVersion>4.0.0</modelVersion>
+  <name>Alfresco SCBI Extensions</name>
+  <packaging>pom</packaging>
+  <parent>
+    <groupId>com.alvexcore</groupId>
+    <artifactId>master-pom</artifactId>
+    <version>1.0</version>
+  </parent>
+  <repositories>
+    <repository>
+      <id>itd-repository</id>
+      <name>ITD Maven Repository</name>
+      <url>http://maven.itdhq.com/public/maven/repository</url>
+    </repository>
+  </repositories>
+  <modules>
+    <module>modules/core/repo</module>
+    <module>modules/core/share</module>
+    <module>distr/jars</module>
+    <module>distr/amps</module>
+  </modules>
+</project>

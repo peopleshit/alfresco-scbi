@@ -1,0 +1,34 @@
+<alfresco-config>
+   <!-- dl:studentDataList type (Creating Data Lists) -->
+   <config evaluator="model-type" condition="hse:studentList">
+      <forms>
+         <!-- Data Lists: Create new Data List -->
+         <form>
+            <field-visibility>
+               <show id="hse:studentName"/>
+               <show id="hse:studentGroup"/>
+            </field-visibility>
+            <appearance>
+               <field id="hse:studentName" mandatory="true"/>
+               <field id="hse:studentGroup" mandatory="true"/>
+            </appearance>
+         </form>
+      </forms>
+   </config>
+
+   <config evaluator="model-type" condition="hse:subjectList">
+      <forms>
+         <!-- Data Lists: Create new Data List -->
+         <form>
+            <field-visibility>
+               <show id="hse:subjectName"/>
+               <show id="hse:subjectTeacher"/>
+            </field-visibility>
+            <appearance>
+               <field id="hse:subjectName" mandatory="true"/>
+               <field id="hse:subjectTeacher" mandatory="true"/>
+            </appearance>
+         </form>
+      </forms>
+    </config>
+</alfresco-config>

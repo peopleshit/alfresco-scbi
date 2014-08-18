@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>List Students Webscript</shortname>
+	<description>Lists students datalist</description>
+	<url>/hse/listStudents</url>
+	<format default="json">any</format>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

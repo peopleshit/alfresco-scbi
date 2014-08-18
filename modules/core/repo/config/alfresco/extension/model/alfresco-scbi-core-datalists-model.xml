@@ -34,8 +34,8 @@
 			</properties>
 		</type>
 		<type name="hse:subjectList">
-			<title></title>
-			<description></description>
+			<title>Список предметов</title>
+			<description>Информация о предметах и преподавателях</description>
 			<parent>dl:dataListItem</parent>
 			<properties>
 				<property name="hse:subjectName">

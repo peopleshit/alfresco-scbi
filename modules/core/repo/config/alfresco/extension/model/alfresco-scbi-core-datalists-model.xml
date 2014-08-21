@@ -42,6 +42,20 @@
 					<title>Предмет</title>
 					<type>d:text</type>
 					<mandatory>true</mandatory>
+					<constraints>
+						<constraint type="LIST">
+							<parameter name="allowedValues">
+								<list>
+									<value>Программирование</value>
+									<value>Макроэкономика</value>
+									<value>Дискретная математика</value>
+									<value>Математический анализ</value>
+									<value>Теория вероятностей и математическая статистика</value>
+									<value>Управление данными</value>
+								</list>
+							</parameter>
+						</constraint>
+					</constraints>
 				</property>
 			</properties>
 

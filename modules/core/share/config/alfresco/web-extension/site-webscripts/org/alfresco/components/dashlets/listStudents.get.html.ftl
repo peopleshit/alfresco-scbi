@@ -17,7 +17,7 @@
 			}));
 	        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSON;
 	        myDataSource.responseSchema = {
-		    resultsList: 'data.students',
+		    	resultsList: 'data.students',
 	            fields: ["name", "group"]
 	        }
 			myDataSource.maxCacheEntries = 0;
@@ -33,26 +33,45 @@
 	});
 </script>
 
+<script type="text/javascript">
+	YAHOO.util.Event.onAvailable("menubutton-hse-container", function() {
+	    Alfresco.util.Ajax.jsonGet(
+		{
+			url: Alfresco.constants.PROXY_URI +
+			"hse/listSubjects.json",
+			successCallback: {
+				fn: function (response)
+				{
+					var oMenuButtonHSE = new YAHOO.widget.Button({ 
+						id: "menubutton-hse-menu-button", 
+						name: "menubutton-hse",
+						label: "<em class=\"yui-button-label\">Option</em>",
+						type: "menu",  
+						menu: response.json.data.subjects, 
+						container: "menubutton-hse-container"
+					});
+					var onSelectedMenuItemChange = function (event) {
+
+						var oMenuItem = event.newValue;
+
+						this.set("label", ("<em class=\"yui-button-label\">" + 
+									oMenuItem.cfg.getProperty("text") + "</em>"));
+
+					};
+					oMenuButtonHSE.on("selectedMenuItemChange", onSelectedMenuItemChange);
+				},
+				scope: this
+			}
+		});
+	});
+</script>
+
 <div class="dashlet">
 	<div class="title">${msg('label.title')}</div>
 	<div class="body scrollableList">
-	<!--
-		<#list data.students as student>
-			<div class="detail-list-student <#if !student_has_next>last-student</#if>">
-				<table>
-					<tr>
-						<td><div class="theme-color-1">${student.name}</div></td>
-						<td><div class="theme-color-1">${student.group}</div></td>
-					</tr>
-				</table>
-			</div>
-		</#list>
-		</br>
-		</br>
-		-->
+		<div id="menubutton-hse-container"></div>
 		<center>
-		<div id="basic">	
-		</div>
+			<div id="basic"></div>
 		</center>
 	</div>
 </div>

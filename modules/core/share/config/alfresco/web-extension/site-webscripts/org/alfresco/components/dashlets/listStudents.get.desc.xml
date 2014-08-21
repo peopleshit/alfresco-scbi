@@ -1,6 +1,6 @@
 <webscript>
 	<shortname>Students Dashlet</shortname>
-	<description>Represents students from datalist</description>
+	<description>Represents students and subjects from datalist</description>
 	<family>dashlet</family>
 	<url>/components/dashlets/listStudents</url>
 </webscript>
